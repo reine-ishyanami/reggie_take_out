@@ -120,6 +120,7 @@ public class UserController {
     @PostMapping("/logout")
     public Result<String> logout(HttpSession session) {
         session.removeAttribute("user");
+        BaseContext.removeCurrentId();
         return Result.success("退出成功");
     }
 

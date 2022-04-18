@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author 86158
+ * @author reine
  * @description 针对表【category(菜品及套餐分类)】的数据库操作Service实现
  * @createDate 2022-04-14 08:27:42
  */

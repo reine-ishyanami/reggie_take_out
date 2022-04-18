@@ -3,17 +3,18 @@ package com.reine.reggie.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
-import lombok.Data;
 
 /**
  * 订单表
+ *
  * @TableName orders
  */
-@TableName(value ="orders")
+@TableName(value = "orders")
 @Data
 public class Orders implements Serializable {
     /**
@@ -68,22 +69,22 @@ public class Orders implements Serializable {
     private String remark;
 
     /**
-     * 
+     * 收货人手机号
      */
     private String phone;
 
     /**
-     * 
+     * 派送地址
      */
     private String address;
 
     /**
-     * 
+     * 下单用户名
      */
     private String userName;
 
     /**
-     * 
+     * 收货人
      */
     private String consignee;
 

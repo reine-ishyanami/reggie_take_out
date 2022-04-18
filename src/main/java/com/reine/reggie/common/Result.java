@@ -1,6 +1,5 @@
 package com.reine.reggie.common;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 
 import java.io.Serializable;

@@ -7,7 +7,7 @@ import com.reine.reggie.service.DishFlavorService;
 import org.springframework.stereotype.Service;
 
 /**
- * @author 86158
+ * @author reine
  * @description 针对表【dish_flavor(菜品口味关系表)】的数据库操作Service实现
  * @createDate 2022-04-14 15:15:00
  */

@@ -7,7 +7,7 @@ import com.reine.reggie.entity.Dish;
 import java.util.List;
 
 /**
- * @author 86158
+ * @author reine
  * @description 针对表【dish(菜品管理)】的数据库操作Service
  * @createDate 2022-04-14 09:23:05
  */

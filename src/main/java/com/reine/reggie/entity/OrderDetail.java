@@ -3,15 +3,17 @@ package com.reine.reggie.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-import lombok.Data;
 
 /**
  * 订单明细表
+ *
  * @TableName order_detail
  */
-@TableName(value ="order_detail")
+@TableName(value = "order_detail")
 @Data
 public class OrderDetail implements Serializable {
     /**
