@@ -1,7 +1,9 @@
 package com.reine.reggie.common;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +14,9 @@ import java.util.Map;
  * @since 2022/4/13 12:13
  */
 @Data
-public class Result<T> {
+public class Result<T> implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * 返回码
