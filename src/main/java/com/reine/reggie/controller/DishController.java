@@ -70,7 +70,6 @@ public class DishController {
         // 条件构造器
         LambdaQueryWrapper<Dish> queryWrapper = Wrappers.lambdaQuery(Dish.class);
         // 添加过滤条件
-        queryWrapper.eq(Dish::getIsDeleted, 0);
         queryWrapper.like(name != null, Dish::getName, name);
         queryWrapper.orderByDesc(Dish::getUpdateTime);
         dishService.page(pageInfo, queryWrapper);

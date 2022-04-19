@@ -3,7 +3,6 @@ package com.reine.reggie.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.reine.reggie.common.BaseContext;
 import com.reine.reggie.common.Result;
 import com.reine.reggie.entity.User;
 import com.reine.reggie.service.UserService;
@@ -120,7 +119,6 @@ public class UserController {
     @PostMapping("/logout")
     public Result<String> logout(HttpSession session) {
         session.removeAttribute("user");
-        BaseContext.removeCurrentId();
         return Result.success("退出成功");
     }
 

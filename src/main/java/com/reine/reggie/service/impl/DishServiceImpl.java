@@ -118,19 +118,13 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish>
         // in查询
         queryWrapper1.in(SetmealDish::getDishId, ids);
         // 查询起售状态的菜品
-        queryWrapper1.eq(SetmealDish::getIsDeleted, 0);
         int count1 = setmealDishService.count(queryWrapper1);
         if (count1 > 0) {
             // 菜品在套餐中，不能删除
             throw new CustomException("菜品在套餐中，不能删除");
         }
-        // 查询起售状态的菜品
-        queryWrapper.eq(Dish::getStatus, 1);
         // 更改菜品删除字段为1
-        LambdaUpdateWrapper<Dish> updateWrapper = Wrappers.lambdaUpdate(Dish.class);
-        updateWrapper.set(Dish::getIsDeleted, 1);
-        updateWrapper.in(Dish::getId, ids);
-        super.update(updateWrapper);
+        super.removeByIds(ids);
     }
 
     /**

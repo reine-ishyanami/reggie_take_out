@@ -72,18 +72,10 @@ public class SetmealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal>
             throw new CustomException("套餐正在售卖中，不能删除");
         }
         // 可以删除
-        // 更改套餐删除字段为1
-        LambdaUpdateWrapper<Setmeal> updateWrapper = Wrappers.lambdaUpdate(Setmeal.class);
-        updateWrapper.set(Setmeal::getIsDeleted, 1);
-        updateWrapper.in(Setmeal::getId, ids);
-        super.update(updateWrapper);
+        super.removeByIds(ids);
 
         // 删除关系表数据
-        LambdaUpdateWrapper<SetmealDish> lambdaUpdateWrapper = Wrappers.lambdaUpdate(SetmealDish.class);
-        lambdaUpdateWrapper.set(SetmealDish::getIsDeleted, 1);
-        lambdaUpdateWrapper.in(SetmealDish::getSetmealId, ids);
-        setmealDishService.update(lambdaUpdateWrapper);
-
+        setmealDishService.removeByIds(ids);
     }
 
     /**

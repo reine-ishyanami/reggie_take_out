@@ -63,7 +63,6 @@ public class SetmealController {
         Page<SetmealDto> dtoPage = new Page<>();
 
         LambdaQueryWrapper<Setmeal> queryWrapper = Wrappers.lambdaQuery(Setmeal.class);
-        queryWrapper.eq(Setmeal::getIsDeleted, 0);
         queryWrapper.like(name != null, Setmeal::getName, name);
         queryWrapper.orderByDesc(Setmeal::getUpdateTime);
 
